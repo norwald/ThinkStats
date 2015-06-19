@@ -71,9 +71,13 @@ def AveragePreg(records):
    
     return float(prg_sum/len(records))
 
+def init():
+   table = survey.Pregnancies()
+   table.ReadRecords()
+   return table
+
 def main():
-    table = survey.Pregnancies()
-    table.ReadRecords()
+    table = init()
     print 'Number of pregnancies: ', len(table.records)
     print 'Number of live births: ', CalcLiveBirths(table.records)
     
