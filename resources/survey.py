@@ -132,7 +132,7 @@ class Respondents(Table):
 class Pregnancies(Table):
     """Contains survey data about a Pregnancy."""
 
-    def ReadRecords(self, data_dir='.', n=None):
+    def ReadRecords(self, data_dir='./resources', n=None):
         filename = self.GetFilename()
         self.ReadFile(data_dir, filename, self.GetFields(), Pregnancy, n)
         self.Recode()
